@@ -1,7 +1,5 @@
 #! /usr/bin/env python
 
-import sys
-
 # initialize dc array with 30000 "0"s
 data_array = [0]*30000
 
@@ -34,18 +32,8 @@ while (1):
         dc += 1
     elif cmd == '<':
         dc -= 1
-        if dc < 0:
-            print ("whatttt")
-            print (loop)
-            print (pc)
-            sys.exit()
     elif cmd == '.':
-        try:
-            asc = chr(data_array[dc])
-        except ValueError:
-            print(dc)
-            print(pc)
-            print(data_array[dc])
+        asc = chr(data_array[dc])
         print (asc, end='', flush=True)
     elif cmd == ',':
         ch = input().strip()
